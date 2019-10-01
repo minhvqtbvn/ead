@@ -13,14 +13,9 @@ public class ProductController {
     @Autowired
     ProductRepository productRepository;
 
-    @RequestMapping(method= RequestMethod.POST,value = "create")
-    public String getAll(Model model){
-        model.addAttribute("products",productRepository.findAll());
-        return "formproduct";
-    }
-    @RequestMapping(method= RequestMethod.POST,value = "create")
-    public String getAll(Model model){
-        model.addAttribute("products",productRepository.findAll());
-        return "listproduct";
+    @RequestMapping(method = RequestMethod.GET)
+    public String getAll(Model model) {
+        model.addAttribute("products", productRepository.findAll());
+        return "listProduct";
     }
 }
